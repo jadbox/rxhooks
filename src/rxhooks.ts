@@ -1,12 +1,12 @@
 // Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
 // import "core-js/fn/array.find"
 // ...
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 // import { useFetch } from 'react-hooks-fetch';
 import { scan } from 'rxjs/operators'
 import { interval, Observable, fromEvent, OperatorFunction } from 'rxjs'
 import { EventEmitter } from 'events'
-
+let { useState, useEffect, useRef } = React
 /*
     useRx is a hook that takes an Observable factory function and returns [currentStreamOutput] for use in your component.
     The stream will rerun anytime the initialValue is changed.
