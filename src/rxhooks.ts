@@ -3,10 +3,9 @@
 // ...
 import React from 'react'
 // import { useFetch } from 'react-hooks-fetch';
-import { scan } from 'rxjs/operators'
-import { interval, Observable, fromEvent, OperatorFunction } from 'rxjs'
+import { Observable, fromEvent, OperatorFunction } from 'rxjs'
 import { EventEmitter } from 'events'
-let { useState, useEffect, useRef } = React
+const { useState, useEffect, useRef } = React
 /*
     useRx is a hook that takes an Observable factory function and returns [currentStreamOutput] for use in your component.
     The stream will rerun anytime the initialValue is changed.
