@@ -2,6 +2,8 @@
 
 `npm install rxhooks`
 
+`yarn install rxhooks`
+
 ### API
 
 ```typescript
