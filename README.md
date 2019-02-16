@@ -2,7 +2,26 @@
 
 `npm install rxhooks`
 
-## Just Show Me the Code
+### API
+
+```
+function useRx<T, X>(stream: (c: X) => Observable<T>, initialValue: X, onErr?: ((error: any) => void) | undefined, onComplete?: (() => void) | undefined): [T]
+
+useRx is a hook that takes an Observable factory function and returns [currentStreamOutput] for use in your component.
+The stream will rerun anytime the initialValue is changed.
+The onErr and onComplete parameters are callbacks to handle those stream states
+```
+
+```
+function useRxState<T, X>(initialValue: X, pipes: OperatorFunction<any, any>, onErr?: ((error: any) => void) | undefined, onComplete?: (() => void) | undefined): [T, (x: X) => void]
+
+useRxState allows adding items to an Rx stream that is created for you.
+The stream will rerun anytime the initialValue is changed.
+The pipes parameter allows passing in Rx operators to work upon the internal source stream.
+The onErr and onComplete parameters are callbacks to handle those stream states
+```
+
+### Just Show Me the Code
 
 ```javascript
 import {useRx, useRxState} from 'rxhooks';
