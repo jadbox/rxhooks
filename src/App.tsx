@@ -2,8 +2,7 @@ import React, { Component, useState, useEffect, useRef, useCallback, useReducer 
 import './App.css';
 // import { useFetch } from 'react-hooks-fetch';
 import { scan } from 'rxjs/operators';
-import { interval, Observable, fromEvent, OperatorFunction } from 'rxjs';
-import { EventEmitter } from 'events';
+import { interval  } from 'rxjs';
 
 import {useRx, useRxState} from 'rxhooks';
 

@@ -932,43 +932,51 @@ img { max-width: 100%; }
 			<h2 id="install">Install</h2>
 			<p><code>npm install rxhooks</code></p>
 			<h3 id="api">API</h3>
-			<pre><code>function useRx&lt;T, X&gt;(stream: <span class="hljs-function"><span class="hljs-params">(c: X)</span> =&gt;</span> Observable&lt;T&gt;, initialValue: X, onErr?: <span class="hljs-function">(<span class="hljs-params">(error: any)</span> =&gt;</span> void) | <span class="hljs-literal">undefined</span>, onComplete?: <span class="hljs-function">(<span class="hljs-params">()</span> =&gt;</span> void) | <span class="hljs-literal">undefined</span>): [T]
+			<pre><code class="language-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useRx</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">X</span>&gt;(<span class="hljs-params">stream: (c: X) =&gt; Observable&lt;T&gt;, initialValue: X, onErr?: ((error: <span class="hljs-built_in">any</span>) =&gt; <span class="hljs-built_in">void</span>) | <span class="hljs-literal">undefined</span>, onComplete?: (() =&gt; <span class="hljs-built_in">void</span>) | <span class="hljs-literal">undefined</span></span>): [<span class="hljs-title">T</span>]
 
-useRx <span class="hljs-keyword">is</span> a hook that takes an Observable factory function <span class="hljs-keyword">and</span> returns [currentStreamOutput] <span class="hljs-keyword">for</span> use <span class="hljs-keyword">in</span> your component.
-The stream will rerun anytime the initialValue <span class="hljs-keyword">is</span> changed.
-The onErr <span class="hljs-keyword">and</span> onComplete parameters are callbacks to handle those stream states</code></pre><pre><code><span class="hljs-keyword">function</span> useRxState&lt;T, X&gt;(initialValue: X, pipes: OperatorFunction&lt;<span class="hljs-keyword">any</span>, <span class="hljs-keyword">any</span>&gt;, onErr?: ((error: <span class="hljs-keyword">any</span>) =&gt; <span class="hljs-type">void</span>) | undefined, onComplete?: (() =&gt; <span class="hljs-type">void</span>) | undefined): [T, (x: X) =&gt; <span class="hljs-type">void</span>]
+<span class="hljs-title">useRx</span> <span class="hljs-title">is</span> <span class="hljs-title">a</span> <span class="hljs-title">hook</span> <span class="hljs-title">that</span> <span class="hljs-title">takes</span> <span class="hljs-title">an</span> <span class="hljs-title">Observable</span> <span class="hljs-title">factory</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">and</span> <span class="hljs-title">returns</span> [<span class="hljs-title">currentStreamOutput</span>] <span class="hljs-title">for</span> <span class="hljs-title">use</span> <span class="hljs-title">in</span> <span class="hljs-title">your</span> <span class="hljs-title">component</span>.
+<span class="hljs-title">The</span> <span class="hljs-title">stream</span> <span class="hljs-title">will</span> <span class="hljs-title">rerun</span> <span class="hljs-title">anytime</span> <span class="hljs-title">the</span> <span class="hljs-title">initialValue</span> <span class="hljs-title">is</span> <span class="hljs-title">changed</span>.
+<span class="hljs-title">The</span> <span class="hljs-title">onErr</span> <span class="hljs-title">and</span> <span class="hljs-title">onComplete</span> <span class="hljs-title">parameters</span> <span class="hljs-title">are</span> <span class="hljs-title">callbacks</span> <span class="hljs-title">to</span> <span class="hljs-title">handle</span> <span class="hljs-title">those</span> <span class="hljs-title">stream</span> <span class="hljs-title">states</span></span></span></code></pre>
+			<pre><code class="language-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useRxState</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">X</span>&gt;(<span class="hljs-params">initialValue: X, pipes: OperatorFunction&lt;<span class="hljs-built_in">any</span>, <span class="hljs-built_in">any</span>&gt;, onErr?: ((error: <span class="hljs-built_in">any</span>) =&gt; <span class="hljs-built_in">void</span>) | <span class="hljs-literal">undefined</span>, onComplete?: (() =&gt; <span class="hljs-built_in">void</span>) | <span class="hljs-literal">undefined</span></span>): [<span class="hljs-title">T</span>, (<span class="hljs-params">x: X</span>) =&gt; <span class="hljs-title">void</span>]
 
-useRxState allows adding items <span class="hljs-keyword">to</span> an Rx stream that <span class="hljs-keyword">is</span> created <span class="hljs-keyword">for</span> you.
-The stream will rerun anytime the initialValue <span class="hljs-keyword">is</span> changed.
-The pipes parameter allows <span class="hljs-keyword">passing</span> <span class="hljs-keyword">in</span> Rx operators <span class="hljs-keyword">to</span> <span class="hljs-keyword">work</span> upon the <span class="hljs-type">internal</span> source stream.
-The onErr <span class="hljs-keyword">and</span> onComplete parameters are callbacks <span class="hljs-keyword">to</span> handle those stream states</code></pre><h2 id="just-show-me-the-code">Just Show Me the Code</h2>
+<span class="hljs-title">useRxState</span> <span class="hljs-title">allows</span> <span class="hljs-title">adding</span> <span class="hljs-title">items</span> <span class="hljs-title">to</span> <span class="hljs-title">an</span> <span class="hljs-title">Rx</span> <span class="hljs-title">stream</span> <span class="hljs-title">that</span> <span class="hljs-title">is</span> <span class="hljs-title">created</span> <span class="hljs-title">for</span> <span class="hljs-title">you</span>.
+<span class="hljs-title">The</span> <span class="hljs-title">stream</span> <span class="hljs-title">will</span> <span class="hljs-title">rerun</span> <span class="hljs-title">anytime</span> <span class="hljs-title">the</span> <span class="hljs-title">initialValue</span> <span class="hljs-title">is</span> <span class="hljs-title">changed</span>.
+<span class="hljs-title">The</span> <span class="hljs-title">pipes</span> <span class="hljs-title">parameter</span> <span class="hljs-title">allows</span> <span class="hljs-title">passing</span> <span class="hljs-title">in</span> <span class="hljs-title">Rx</span> <span class="hljs-title">operators</span> <span class="hljs-title">to</span> <span class="hljs-title">work</span> <span class="hljs-title">upon</span> <span class="hljs-title">the</span> <span class="hljs-title">internal</span> <span class="hljs-title">source</span> <span class="hljs-title">stream</span>.
+<span class="hljs-title">The</span> <span class="hljs-title">onErr</span> <span class="hljs-title">and</span> <span class="hljs-title">onComplete</span> <span class="hljs-title">parameters</span> <span class="hljs-title">are</span> <span class="hljs-title">callbacks</span> <span class="hljs-title">to</span> <span class="hljs-title">handle</span> <span class="hljs-title">those</span> <span class="hljs-title">stream</span> <span class="hljs-title">states</span></span></code></pre>
+			<h3 id="just-show-me-the-code">Just Show Me the Code</h3>
 			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {useRx, useRxState} <span class="hljs-keyword">from</span> <span class="hljs-string">'rxhooks'</span>;
+<span class="hljs-keyword">import</span> { scan } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs/operators'</span>;
+<span class="hljs-keyword">import</span> { interval } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs'</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ExampleUseRxState</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> initialVal = <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">const</span> [count, signalCount] = useRxState(initialVal, 
-    scan( <span class="hljs-function">(<span class="hljs-params">acc, x</span>) =&gt;</span> x+acc, <span class="hljs-number">0</span>) 
-  );
+<span class="hljs-comment">// Read from an Observable stream</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ExampleUseRx</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> stream = <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> interval(<span class="hljs-number">1000</span> * x);
 
-  <span class="hljs-keyword">const</span> onClick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    signalCount(<span class="hljs-number">1</span>);
-  }
+  <span class="hljs-keyword">const</span> [speed, setSpeed] = useState(<span class="hljs-number">1</span>);
+  <span class="hljs-keyword">const</span> [count] = useRx( stream, speed );
 
   <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{onClick}</span>&gt;</span>Add 1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>count {count}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setSpeed(speed+1)}&gt;Make slower via initialValue change<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>speed {speed}{' '}|{' '}count {count}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/&gt;</span>
 }
 
-function ExampleUseRx() {
-  const stream = (x) =&gt; interval(1000 * x);
+// Two-way communication between the component and Observable.
+// The signalCount callback pushes values into the Observable source.
+// Parameter "scan( (acc, x) =&gt; x+acc, 0)" creates a rolling sum upon the output stream
+function ExampleUseRxState() {
+  const initialVal = 1;
+  const [count, signalCount] = useRxState(initialVal, 
+    scan( (acc, x) =&gt; x+acc, 0) 
+  );
 
-  const [speed, setSpeed] = useState(1);
-  const [count] = useRx( stream, speed );
+  const onClick = () =&gt; {
+    signalCount(1);
+  }
 
   return <span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> setSpeed(speed+1)}&gt;Make slower via initialValue change<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>speed {speed}{' '}|{' '}count {count}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{onClick}</span>&gt;</span>Add 1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>count {count}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/&gt;</span>
 }
 
@@ -1020,7 +1028,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>Effect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useEffect</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/8162ec9/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1030,7 +1038,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>Ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useRef</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/8162ec9/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1040,7 +1048,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useState</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/8162ec9/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1057,7 +1065,7 @@ export default App;</span></code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L14">rxhooks.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/8162ec9/rxhooks/src/rxhooks.ts#L14">rxhooks.ts:14</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1116,7 +1124,7 @@ export default App;</span></code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L41">rxhooks.ts:41</a></li>
+								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/8162ec9/rxhooks/src/rxhooks.ts#L41">rxhooks.ts:41</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>

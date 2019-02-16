@@ -21,11 +21,29 @@ The pipes parameter allows passing in Rx operators to work upon the internal sou
 The onErr and onComplete parameters are callbacks to handle those stream states
 ```
 
-## Just Show Me the Code
+### Just Show Me the Code
 
 ```javascript
 import {useRx, useRxState} from 'rxhooks';
+import { scan } from 'rxjs/operators';
+import { interval } from 'rxjs';
 
+// Read from an Observable stream
+function ExampleUseRx() {
+  const stream = (x) => interval(1000 * x);
+
+  const [speed, setSpeed] = useState(1);
+  const [count] = useRx( stream, speed );
+  
+  return <>
+    <button onClick={() => setSpeed(speed+1)}>Make slower via initialValue change</button>
+    <p>speed {speed}{' '}|{' '}count {count}</p>
+  </>
+}
+
+// Two-way communication between the component and Observable.
+// The signalCount callback pushes values into the Observable source.
+// Parameter "scan( (acc, x) => x+acc, 0)" creates a rolling sum upon the output stream
 function ExampleUseRxState() {
   const initialVal = 1;
   const [count, signalCount] = useRxState(initialVal, 
@@ -39,18 +57,6 @@ function ExampleUseRxState() {
   return <>
     <button onClick={onClick}>Add 1</button>
     <p>count {count}</p>
-  </>
-}
-
-function ExampleUseRx() {
-  const stream = (x) => interval(1000 * x);
-
-  const [speed, setSpeed] = useState(1);
-  const [count] = useRx( stream, speed );
-  
-  return <>
-    <button onClick={() => setSpeed(speed+1)}>Make slower via initialValue change</button>
-    <p>speed {speed}{' '}|{' '}count {count}</p>
   </>
 }
 
