@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import "core-js/fn/array.find"
 // ...
 var react_1 = require("react");
+// import { useFetch } from 'react-hooks-fetch';
 var rxjs_1 = require("rxjs");
 var events_1 = require("events");
 var useState = react_1.default.useState, useEffect = react_1.default.useEffect, useRef = react_1.default.useRef;

@@ -1,0 +1,3 @@
+var typedoc = typedoc || {};
+            typedoc.search = typedoc.search || {};
+            typedoc.search.data = {"kinds":{"32":"Variable","64":"Function"},"rows":[{"id":0,"kind":32,"name":"useState","url":"globals.html#usestate","classes":"tsd-kind-variable tsd-is-not-exported"},{"id":1,"kind":32,"name":"useEffect","url":"globals.html#useeffect","classes":"tsd-kind-variable tsd-is-not-exported"},{"id":2,"kind":32,"name":"useRef","url":"globals.html#useref","classes":"tsd-kind-variable tsd-is-not-exported"},{"id":3,"kind":64,"name":"useRx","url":"globals.html#userx","classes":"tsd-kind-function tsd-has-type-parameter"},{"id":4,"kind":64,"name":"useRxState","url":"globals.html#userxstate","classes":"tsd-kind-function tsd-has-type-parameter"}]};

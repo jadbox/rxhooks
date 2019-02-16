@@ -1,5 +1,7 @@
 ## Just Show Me the Code
 
+See `packages/example` project
+
 ```javascript
 function ExampleUseRxState() {
   const initialVal = 1;
