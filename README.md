@@ -1,6 +1,12 @@
+## Install
+
+`npm install rxhooks`
+
 ## Just Show Me the Code
 
 ```javascript
+import {useRx, useRxState} from 'rxhooks';
+
 function ExampleUseRxState() {
   const initialVal = 1;
   const [count, signalCount] = useRxState(initialVal, 

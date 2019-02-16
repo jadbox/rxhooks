@@ -929,9 +929,12 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
+			<h2 id="install">Install</h2>
+			<p><code>npm install rxhooks</code></p>
 			<h2 id="just-show-me-the-code">Just Show Me the Code</h2>
-			<p>See <code>packages/example</code> project</p>
-			<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ExampleUseRxState</span>(<span class="hljs-params"></span>) </span>{
+			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {useRx, useRxState} <span class="hljs-keyword">from</span> <span class="hljs-string">'rxhooks'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ExampleUseRxState</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> initialVal = <span class="hljs-number">1</span>;
   <span class="hljs-keyword">const</span> [count, signalCount] = useRxState(initialVal, 
     scan( <span class="hljs-function">(<span class="hljs-params">acc, x</span>) =&gt;</span> x+acc, <span class="hljs-number">0</span>) 
@@ -1007,7 +1010,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>Effect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useEffect</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in rxhooks.ts:8</li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1017,7 +1020,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>Ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useRef</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in rxhooks.ts:8</li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1027,7 +1030,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useState</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in rxhooks.ts:8</li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1044,7 +1047,7 @@ export default App;</span></code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in rxhooks.ts:14</li>
+								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L14">rxhooks.ts:14</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1103,7 +1106,7 @@ export default App;</span></code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in rxhooks.ts:41</li>
+								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L41">rxhooks.ts:41</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>

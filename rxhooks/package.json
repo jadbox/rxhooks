@@ -1,7 +1,7 @@
 {
   "name": "rxhooks",
-  "version": "0.5.5",
-  "description": "",
+  "version": "0.5.6",
+  "description": "React Hooks adaptor for RxJS",
   "keywords": [],
   "main": "dist/lib/rxhooks.umd.js",
   "module": "dist/lib/rxhooks.es5.js",
@@ -12,7 +12,7 @@
   "author": "Jonathan Dunlap <jdunlap@outlook.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jadbox/rxhooks.git"
   },
   "license": "MIT",
   "engines": {
