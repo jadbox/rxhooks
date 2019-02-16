@@ -931,7 +931,17 @@ img { max-width: 100%; }
 		<div class="tsd-panel tsd-typography">
 			<h2 id="install">Install</h2>
 			<p><code>npm install rxhooks</code></p>
-			<h2 id="just-show-me-the-code">Just Show Me the Code</h2>
+			<h3 id="api">API</h3>
+			<pre><code>function useRx&lt;T, X&gt;(stream: <span class="hljs-function"><span class="hljs-params">(c: X)</span> =&gt;</span> Observable&lt;T&gt;, initialValue: X, onErr?: <span class="hljs-function">(<span class="hljs-params">(error: any)</span> =&gt;</span> void) | <span class="hljs-literal">undefined</span>, onComplete?: <span class="hljs-function">(<span class="hljs-params">()</span> =&gt;</span> void) | <span class="hljs-literal">undefined</span>): [T]
+
+useRx <span class="hljs-keyword">is</span> a hook that takes an Observable factory function <span class="hljs-keyword">and</span> returns [currentStreamOutput] <span class="hljs-keyword">for</span> use <span class="hljs-keyword">in</span> your component.
+The stream will rerun anytime the initialValue <span class="hljs-keyword">is</span> changed.
+The onErr <span class="hljs-keyword">and</span> onComplete parameters are callbacks to handle those stream states</code></pre><pre><code><span class="hljs-keyword">function</span> useRxState&lt;T, X&gt;(initialValue: X, pipes: OperatorFunction&lt;<span class="hljs-keyword">any</span>, <span class="hljs-keyword">any</span>&gt;, onErr?: ((error: <span class="hljs-keyword">any</span>) =&gt; <span class="hljs-type">void</span>) | undefined, onComplete?: (() =&gt; <span class="hljs-type">void</span>) | undefined): [T, (x: X) =&gt; <span class="hljs-type">void</span>]
+
+useRxState allows adding items <span class="hljs-keyword">to</span> an Rx stream that <span class="hljs-keyword">is</span> created <span class="hljs-keyword">for</span> you.
+The stream will rerun anytime the initialValue <span class="hljs-keyword">is</span> changed.
+The pipes parameter allows <span class="hljs-keyword">passing</span> <span class="hljs-keyword">in</span> Rx operators <span class="hljs-keyword">to</span> <span class="hljs-keyword">work</span> upon the <span class="hljs-type">internal</span> source stream.
+The onErr <span class="hljs-keyword">and</span> onComplete parameters are callbacks <span class="hljs-keyword">to</span> handle those stream states</code></pre><h2 id="just-show-me-the-code">Just Show Me the Code</h2>
 			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {useRx, useRxState} <span class="hljs-keyword">from</span> <span class="hljs-string">'rxhooks'</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ExampleUseRxState</span>(<span class="hljs-params"></span>) </span>{
@@ -1010,7 +1020,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>Effect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useEffect</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1020,7 +1030,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>Ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useRef</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1030,7 +1040,7 @@ export default App;</span></code></pre>
 				<div class="tsd-signature tsd-kind-icon">use<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">useState</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L8">rxhooks.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1047,7 +1057,7 @@ export default App;</span></code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L14">rxhooks.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L14">rxhooks.ts:14</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1106,7 +1116,7 @@ export default App;</span></code></pre>
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/362ed8a/rxhooks/src/rxhooks.ts#L41">rxhooks.ts:41</a></li>
+								<li>Defined in <a href="https://github.com/jadbox/rxhooks/blob/fca4f22/rxhooks/src/rxhooks.ts#L41">rxhooks.ts:41</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-type-parameters-title">Type parameters</h4>

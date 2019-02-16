@@ -1,6 +1,6 @@
 {
   "name": "rxhooks",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "description": "React Hooks adaptor for RxJS",
   "keywords": [],
   "main": "dist/lib/rxhooks.umd.js",
